@@ -24,15 +24,11 @@ public class Email {
         // Call a method asking for the department
         this.department = this.setDepartment();
 
-        System.out.println("Department is: " + this.department);
-
         // Call a method that returns a random password
         this.password = randomPassword(this.defaultPasswordLength);
-        System.out.println("Your password is " + this.password);
 
         // Combine elements to generate email
         this.email = this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@" + this.department.toLowerCase() + "." + this.companySuffix;
-        System.out.println("Your email is: " + this.email);
     }
 
     // Encapsulation, hide properties that can only be modified through getters and setters
@@ -119,12 +115,14 @@ public class Email {
     }
 
 
-    // Set the mailbox capacity
+    public String showInfo() {
+        String infoMessage = "Display Name: " + this.firstName + " " + this.lastName + "\n" +
+                "Company Email: " + this.email+ "\n" +
+                "MailBoxCapacity: " + this.mailboxCapacity + "mb";
+        System.out.println(infoMessage);
 
-
-    // Set the alternate email
-
-    // Change the password
+        return infoMessage;
+    }
 
 
 }
