@@ -9,7 +9,7 @@ public class Email {
     private String password;
     private String department;
     private String email;
-    private int mailboxCapacity;
+    private int mailboxCapacity = 500;
     private int defaultPasswordLength = 10;
     private String alternateEmail;
     private String companySuffix = "chocolate-company.com";
@@ -34,6 +34,35 @@ public class Email {
         this.email = this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@" + this.department.toLowerCase() + "." + this.companySuffix;
         System.out.println("Your email is: " + this.email);
     }
+
+    // Encapsulation, hide properties that can only be modified through getters and setters
+    public void setMailboxCapacity(int capacity) {
+        System.out.println("Old email capacity was: " + this.mailboxCapacity);
+        this.mailboxCapacity = capacity;
+        System.out.println("New email capacity is: " + this.mailboxCapacity);
+    }
+
+    public void setAlternateEmail(String altEmail) {
+        this.alternateEmail = altEmail;
+    }
+
+    public void changePassword(String password) {
+        this.password = password;
+    }
+
+    public int getMailboxCapacity() {
+        return this.mailboxCapacity;
+    }
+
+    public String getAlternateEmail() {
+        return this.alternateEmail;
+    }
+
+    public String getPassword() {
+        return this.password;
+    }
+
+
 
     // Ask for the department
     private String setDepartment() {
@@ -91,6 +120,7 @@ public class Email {
 
 
     // Set the mailbox capacity
+
 
     // Set the alternate email
 
