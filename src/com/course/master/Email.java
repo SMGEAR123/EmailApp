@@ -12,6 +12,7 @@ public class Email {
     private int mailboxCapacity;
     private int defaultPasswordLength = 10;
     private String alternateEmail;
+    private String companySuffix = "chocolate-company.com";
 
     // Constructor to receive first and last name
 
@@ -30,7 +31,8 @@ public class Email {
         System.out.println("Your password is " + this.password);
 
         // Combine elements to generate email
-
+        this.email = this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@" + this.department.toLowerCase() + "." + this.companySuffix;
+        System.out.println("Your email is: " + this.email);
     }
 
     // Ask for the department
@@ -39,9 +41,9 @@ public class Email {
         //Accept User Input
         Scanner in = new Scanner(System.in);
         int deptChoice = in.nextInt();
-        System.out.println(deptChoice);
+//        System.out.println(deptChoice);
 
-        String selectedDept = null;
+        String selectedDept;
 
         switch(deptChoice) {
             case 1:
@@ -68,9 +70,7 @@ public class Email {
     }
 
     public String getFullName() {
-        String fullName = this.firstName + " " + this.lastName;
-
-        return fullName;
+        return this.firstName + " " + this.lastName;
     }
 
     public String getLastName() {
